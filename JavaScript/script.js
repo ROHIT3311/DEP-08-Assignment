@@ -31,9 +31,50 @@
 //    req = prompt("Enter Task");
 // }
 
-let str = "     Hello       ";
-console.log("trim : " + str.trim());
-str = "Hello";
-console.log("Slice : " + str.slice(2));
-str = "Hello";
-console.log("Replace : " + str.replace("e", "o"));
+// let str = "     Hello       ";
+// console.log("trim : " + str.trim());
+// str = "Hello";
+// console.log("Slice : " + str.slice(2));
+// str = "Hello";
+// console.log("Replace : " + str.replace("e", "o"));
+
+// let str = "Hello how are you";
+// console.log(str.split(" "));
+
+// let arr = ["mango", "banana"];
+// arr[5] = "apple";
+// arr.push("papaya");
+// console.log(arr);
+
+// let arr = [1, 2, 3];
+// arr.forEach((el) => {
+//   console.log((el *= 2));
+// });
+
+// let arr = [1, 2, 3];
+// let newArr = arr.map((el) => {
+//   return el * 5;
+// });
+// console.log(newArr);
+
+// let arr = [1, 2, 3];
+// let newArr = arr.filter((el) => {
+//   return el > 2;
+// });
+
+// console.log(newArr);
+
+// let arr = [1, 2, 3];
+// let finalValue = arr.reduce((res, el) => {
+//   return res + el;
+// });
+
+// console.log(finalValue);
+
+let data = [
+  { name: "rohit", id: 123 },
+  { name: "john", id: 456 },
+];
+
+const dataCpy = { ...data };
+console.log(dataCpy);
