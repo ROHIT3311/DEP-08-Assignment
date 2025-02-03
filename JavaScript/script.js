@@ -71,10 +71,37 @@
 
 // console.log(finalValue);
 
-let data = [
-  { name: "rohit", id: 123 },
-  { name: "john", id: 456 },
-];
+// let data = [
+//   { name: "rohit", id: 123 },
+//   { name: "john", id: 456 },
+// ];
 
-const dataCpy = { ...data };
-console.log(dataCpy);
+// const dataCpy = { ...data };
+// console.log(dataCpy);
+
+// var x = 10;
+// function getName() {
+//   console.log("Hello");
+// }
+
+// console.log(x);
+// getName();
+
+// function getVal() {
+//   let x = 10;
+//   console.log("from get val : ", x);
+//   function getVal2() {
+//     console.log("from get val 2 : ", x);
+//   }
+//   getVal2();
+// }
+
+// getVal();
+
+{
+  var a = 10;
+  let b = 20;
+  const c = 30;
+}
+
+console.log(a);
