@@ -1,29 +1,23 @@
-function GreatestWordVowels(sentence) {
-    
-const wordArray = sentence.split(" ");
+function GreatestWordVowels(str) {
+  const wordArray = str.split(" ");
 
-console.log(wordArray);
+  let word = "";
+  let maxVowelCount = 0;
 
-let word = "";
-let maxVowelCount = 0;
-
-for(let currWord of wordArray){
-  
+  for (let currWord of wordArray) {
     let vowelCount = 0;
-    for(let char of currWord){
-    
-        if( "aeiou".includes(char.toLowerCase())){
-            vowelCount++;
-        }
+    for (let char of currWord) {
+      if ("aeiou".includes(char.toLowerCase())) {
+        vowelCount++;
+      }
     }
-    if(maxVowelCount < vowelCount){
-        word = currWord;
+    if (maxVowelCount < vowelCount) {
+      word = currWord;
     }
+  }
+
+  return word;
 }
 
-console.log(word);
-}
-
-const sentence = "Hello this is leetcode ";
-GreatestWordVowels(sentence);
-
+const sentence = "Hello this is world ";
+console.log(GreatestWordVowels(sentence));

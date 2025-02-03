@@ -10,8 +10,8 @@ function LongestWordInSen(sentence) {
     }
   }
 
-  console.log(word);
+  return word;
 }
 
-let sentence = "Hello this is leetcode";
-LongestWordInSen(sentence);
+let sentence = "Hello this is leetcode ";
+console.log(LongestWordInSen(sentence));
