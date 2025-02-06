@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Header</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header id="header">
+      <nav>
+        <div
+          class="navbar-1 h-[60px] w-full bg-[#303240] flex justify-between text-[#ffffff] fixed top-0 z-50"
+        >
+          <div
+            class="first-part-nav flex justify-between w-[600px] place-items-center font-semibold"
+          >
+            <img src="image.png" alt="" class="h-[50px] w-[160px]" />
+            <a
+              class="hover:bg-[#1d1e26] h-full p-1 px-3 flex items-center nav-link"
+              href="dashboard.html"
+              >Dashboard</a
+            >
+            <a
+              class="hover:bg-[#1d1e26] h-full p-1 px-3 flex items-center"
+              href=""
+              >Requests</a
+            >
+            <a
+              class="hover:bg-[#1d1e26] h-full p-1 px-3 flex items-center"
+              href="balance.html"
+              >Balance</a
+            >
+            <a
+              class="hover:bg-[#1d1e26] h-full p-1 px-3 flex items-center"
+              href=""
+              >Notification</a
+            >
+          </div>
+          <div
+            class="second-part-nav flex place-items-center w-[300px] justify-between"
+          >
+            <button
+              class="bg-[#009ecc] p-2 rounded-lg hover:bg-[#0086ad] cursor-pointer font-semibold"
+            >
+              <span class="text-xl font-bold">+</span> Add request
+            </button>
+            <div
+              class="w-7 h-7 border-2 border-[#e1e3eb] text-[#e1e3eb] rounded-full flex items-center justify-center cursor-pointer hover:border-[#ffffff] hover:text-[#ffffff]"
+            >
+              <i class="fa-sharp fa-solid fa-question"></i>
+            </div>
+            <div
+              class="w-7 h-7 border-2 border-[#e1e3eb] text-[#e1e3eb] hover:border-[#ffffff] hover:text-[#ffffff] rounded-full flex items-center justify-center cursor-pointer"
+            >
+              <i class="fa-sharp fa-solid fa-user"></i>
+            </div>
+            <i
+              class="fa-sharp fa-solid fa-grip-vertical w-10 text-2xl cursor-pointer text-[#e1e3eb] hover:text-[#ffffff]"
+            ></i>
+          </div>
+        </div>
+      </nav>
+      <nav class="navbar-2 h-[50px] w-full shadow-md mt-[60px]">
+        <div class="flex place-items-center h-full">
+          <p
+            class="p-5 hover:text-blue-800 h-full flex items-center text-blue-500 font-semibold border-b-2 border-blue-500 cursor-pointer"
+          >
+            Personal
+          </p>
+          <p
+            class="p-5 hover:text-blue-500 h-full flex items-center font-semibold cursor-pointer"
+          >
+            Action required
+          </p>
+        </div>
+      </nav>
+    </header>
+  </body>
+</html>

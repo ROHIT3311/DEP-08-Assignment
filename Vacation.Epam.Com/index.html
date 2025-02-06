@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vacation - EPAM Vacation Tracking</title>
+    <script
+      src="https://kit.fontawesome.com/5d44603319.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <script>
+      window.onload = function () {
+        // Load navbar
+        fetch("header.html")
+          .then((response) => response.text())
+          .then((data) => {
+            document.getElementById("navbar").innerHTML = data;
+            // After loading the navbar, set the active link to dashboard
+            const dashboardLink = document.querySelector(
+              'a[href="dashboard.html"]'
+            );
+            if (dashboardLink) {
+              dashboardLink.classList.add("active");
+            }
+          })
+          .catch((error) => console.error("Error loading navbar:", error));
+
+        // Load dashboard content by default
+        fetch("dashboard.html")
+          .then((response) => response.text())
+          .then((data) => {
+            document.getElementById("main-content").innerHTML = data;
+          })
+          .catch((error) => console.error("Error loading dashboard:", error));
+      };
+    </script>
+  </head>
+  <body>
+    <div id="navbar"></div>
+    <div id="main-content"></div>
+  </body>
+</html>

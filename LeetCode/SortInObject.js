@@ -5,6 +5,10 @@ function SortInObjects(obj) {
   console.log(obj);
 }
 
+let str = "hello"
+str.length
+
+
 let employees = [
   { name: "John", dob: "Dec 15, 2007", score: 80 },
   { name: "Ana", dob: "Jan 15, 2009", score: 75 },

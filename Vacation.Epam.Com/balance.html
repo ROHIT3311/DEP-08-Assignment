@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Balances</title>
+    <script
+      src="https://kit.fontawesome.com/5d44603319.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+
+    <script>
+      fetch("header.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("navbar").innerHTML = data;
+          // After loading the navbar, set the active link to dashboard
+          const dashboardLink = document.querySelector(
+            'a[href="dashboard.html"]'
+          );
+          if (dashboardLink) {
+            dashboardLink.classList.add("active");
+          }
+        })
+        .catch((error) => console.error("Error loading navbar:", error));
+    </script>
+  </head>
+  <body>
+    <div id="navbar"></div>
+
+    <div
+      class="mt-5 w-full h-[70px] flex justify-end place-items-center gap-x-3 px-5"
+    >
+      <p>Date :</p>
+      <input
+        type="date"
+        name=""
+        id=""
+        class="border-1 h-[40px] mx-2 border-[#ced0db] bg-[#ffffff] p-1 rounded-sm"
+      />
+
+      <i
+        class="fa-sharp fa-solid fa-arrow-rotate-right"
+        style="color: #474a59"
+      ></i>
+      <div
+        class="flex place-items-center text-[#474a59] w-[90px] justify-between"
+      >
+        <i class="fa-solid fa-file-excel"></i>
+        <p>Export</p>
+        <i class="fa-solid fa-chevron-down"></i>
+      </div>
+      <div class="w-50px flex">
+        <button
+          class="border-1 font-semibold border-[#ced0db] p-[7px] bg-[#009ecc] text-white rounded-l-sm"
+        >
+          Actual
+        </button>
+        <button
+          class="border-1 font-semibold border-[#ced0db] p-[7px] rounded-r-sm"
+        >
+          All
+        </button>
+      </div>
+    </div>
+    <div class="px-5 w-full h-[500px]">
+      <div
+        class="leave-heading flex gap-x-4 place-items-center w-full h-[50px] bg-blue-100 font-semibold"
+      >
+        <a href="">Regular vacations</a>
+        <a href="">Sick leave</a>
+        <a href="">Leave w/o pay</a>
+        <a href="">Exceptional leave</a>
+      </div>
+    </div>
+  </body>
+</html>
