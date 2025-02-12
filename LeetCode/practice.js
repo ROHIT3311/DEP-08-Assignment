@@ -65,19 +65,66 @@
 // }
 // console.log(max);
 
-let arr = [1, 5, 4, 2, 9, 9, 9];
-let k = 3;
+// let arr = [1, 5, 4, 2, 9, 9, 9];
+// let k = 3;
 
-// Remove duplicates and sort the array in descending order
-let unique = [...new Set(arr)];
+// // Remove duplicates and sort the array in descending order
+// let unique = [...new Set(arr)];
 
-let maxSum = 0;
-for (let i = 0; i <= unique.length - k; i++) {
-  let currentSum = 0;
-  for (let j = i; j < i + k; j++) {
-    currentSum += unique[j];
+// let maxSum = 0;
+// for (let i = 0; i <= unique.length - k; i++) {
+//   let currentSum = 0;
+//   for (let j = i; j < i + k; j++) {
+//     currentSum += unique[j];
+//   }
+//   maxSum = Math.max(maxSum, currentSum);
+// }
+
+// console.log("Maximum sum of subarray of size", k, ":", maxSum);
+
+function printMaxProduct(arr) {
+  let maxProduct = 0;
+  let maxNumber = 0;
+  let count = 0;
+
+  let r = 0;
+
+  while (r < arr.length) {
+    if (arr[r] == 0) {
+      maxProduct = Math.max(maxProduct, count * maxNumber);
+      maxNumber = 0;
+      count = 0;
+    } else {
+      count++;
+      maxNumber = Math.max(maxNumber, arr[r]);
+    }
+    r++;
   }
-  maxSum = Math.max(maxSum, currentSum);
+
+  maxProduct = Math.max(maxProduct, maxNumber * count);
+
+  return maxProduct;
 }
 
-console.log("Maximum sum of subarray of size", k, ":", maxSum);
+function maxArr(arr) {
+  let count = 0,
+    max = 0,
+    ans = 0;
+
+  for (let i = 0; i < nums.length; i++) {
+    if (nums[i] == 0) {
+      ans = Math.max(ans, count * max);
+      count = 0;
+      max = 0;
+    } else {
+      count++;
+      max = Math.max(max, nums[i]);
+    }
+  }
+
+  ans = Math.max(ans, count * max); // Ensure the last subarray is considered
+  return ans;
+}
+
+let arr = [0, 1, 2, 3, 0, 4, 5, 6, 0, 10, 20];
+console.log(printMaxProduct(arr));

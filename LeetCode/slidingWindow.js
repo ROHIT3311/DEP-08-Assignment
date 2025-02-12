@@ -102,12 +102,69 @@ function optimizedLongestSubstringWithoutRepeat(str) {
   return maxLen;
 }
 
-let arr = [6, 2, 3, 4, 7, 2, 1, 7, 1];
-let k = 4;
+function maxConsecutiveOnes(arr, k) {
+  let l = 0;
+  let r = 0;
+  let maxLen = 0;
+  let totalZero = 0;
+
+  while (r < arr.length) {
+    if (arr[r] === 0) {
+      totalZero++;
+    }
+
+    if (totalZero > k) {
+      if (arr[l] == 0) {
+        totalZero--;
+      }
+      l++;
+    }
+    if (totalZero <= k) {
+      maxLen = Math.max(maxLen, r - l + 1);
+    }
+    r++;
+  }
+
+  return maxLen;
+}
+
+function longestSubstringWithKDistinct(str, k) {
+  let l = 0;
+  let r = 0;
+  let maxLen = 0;
+  let h1 = new Map();
+
+  while (r < str.length) {
+    h1.set(str.charAt(r), h1.get(str.charAt(r) || 0) + 1);
+    if (h1.size > k) {
+      h1.set(h1.get(str.charAt(l)), h1.get(str.charAt(l)) - 1);
+      if (h1.get(str.charAt(l)) == 0) {
+        h1.delete(str.charAt(l));
+      }
+      l++;
+    }
+
+    if (h1.size <= k) {
+      maxLen = Math.max(maxLen, r - l + 1);
+    }
+    r++;
+  }
+
+  return maxLen;
+}
+
+// let arr = [6, 2, 3, 4, 7, 2, 1, 7, 1];
+// let k = 4;
 // console.log(MaxSumSubArray(arr, k));
 // console.log(maxSumSubArrayWithSum(arr, 26));
 // console.log(maxCardPickupSum(arr, k));
 
-let str = "cabdzabcd";
+// let str = "cabdzabcd";
 // console.log(longestSubstringWithoutRepeat(str));
-console.log(optimizedLongestSubstringWithoutRepeat(str));
+// console.log(optimizedLongestSubstringWithoutRepeat(str));
+
+// let arr = [1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0];
+// console.log(maxConsecutiveOnes(arr, 3));
+
+let str = "aaabbccd";
+console.log(longestSubstringWithKDistinct(str, 2));
