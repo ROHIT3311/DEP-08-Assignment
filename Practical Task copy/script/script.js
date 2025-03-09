@@ -1,7 +1,3 @@
-// function toggleMenu() {
-//   document.getElementById("mobile-menu").classList.toggle("hidden");
-// }
-
 function toggleMenu() {
   const hamburgerMenu = document.getElementById("hamburger-menu");
   const boxcarHeading = document.getElementById("boxcar-heading");
@@ -20,7 +16,7 @@ function toggleMenu() {
   }
 }
 
-fetch("carTypes.json")
+fetch("Json/carTypes.json")
   .then((response) => response.json())
   .then((data) => {
     const carCardsContainer = document.getElementById("carCardsContainer");
@@ -68,7 +64,7 @@ function displayCarCards(cars, container) {
     container.appendChild(card);
   });
 }
-fetch("vehicles.json")
+fetch("Json/vehicles.json")
   .then((response) => response.json())
   .then((data) => {
     const vehicleCardsContainer = document.getElementById(
@@ -167,7 +163,7 @@ function displayVehicleCards(vehicles, container) {
 }
 
 // Special Vehicles
-fetch("vehicles.json")
+fetch("Json/vehicles.json")
   .then((response) => response.json())
   .then((data) => {
     const container = document.getElementById("specialCarCardsContainer");
@@ -261,7 +257,7 @@ fetch("vehicles.json")
   .catch((error) => console.error("Error fetching special cars data:", error));
 
 // --- Team Section ---
-fetch("team.json")
+fetch("Json/team.json")
   .then((response) => response.json())
   .then((data) => {
     const teamCardsContainer = document.getElementById("teamCardsContainer");
@@ -338,3 +334,118 @@ function displayTeamCards(teamMembers, container) {
     container.appendChild(card);
   });
 }
+
+const chatbotToggle = document.getElementById("chatbotToggle");
+const chatbotContainer = document.getElementById("chatbotContainer");
+const closeChatbot = document.getElementById("closeChatbot");
+const sendMessage = document.getElementById("sendMessage");
+const chatInput = document.getElementById("chatInput");
+const chatMessages = document.getElementById("chatMessages");
+
+const GEMINI_API_KEY = "AIzaSyCPcYtaxFuySc6IFVIZ90FFcPvUMSR9QNA"; // Replace with your actual API key
+
+// Toggle Chatbot Visibility
+chatbotToggle.addEventListener("click", () => {
+  chatbotContainer.classList.toggle("scale-95");
+  chatbotContainer.classList.toggle("opacity-0");
+  chatbotContainer.classList.toggle("invisible");
+});
+
+// Close Chatbot
+closeChatbot.addEventListener("click", () => {
+  chatbotContainer.classList.add("scale-95", "opacity-0", "invisible");
+});
+
+// Send Message to Gemini API
+// sendMessage.addEventListener("click", async () => {
+//   const userInput = chatInput.value.trim();
+//   if (!userInput) return;
+
+//   // Display user message
+//   chatMessages.innerHTML += `<p class="text-sm text-blue-600">You: ${userInput}</p>`;
+//   chatInput.value = "";
+
+//   try {
+//     const response = await fetch(
+//       `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${GEMINI_API_KEY}`,
+//       {
+//         method: "POST",
+//         headers: { "Content-Type": "application/json" },
+//         body: JSON.stringify({
+//           contents: [{ role: "user", parts: [{ text: userInput }] }],
+//         }),
+//       }
+//     );
+
+//     const data = await response.json();
+
+//     // Check API Response
+//     if (response.ok && data.candidates) {
+//       const botResponse =
+//         data.candidates[0]?.content?.parts?.[0]?.text ||
+//         "I couldn't find an answer.";
+//       chatMessages.innerHTML += `<p class="text-sm text-gray-800">Bot: ${botResponse}</p>`;
+//     } else {
+//       console.error("API Response Error:", data);
+//       chatMessages.innerHTML += `<p class="text-sm text-red-600">Bot: Unable to get a response.</p>`;
+//     }
+
+//     // Auto-scroll to bottom
+//     chatMessages.scrollTop = chatMessages.scrollHeight;
+//   } catch (error) {
+//     console.error("Network Error:", error);
+//     chatMessages.innerHTML += `<p class="text-sm text-red-600">Bot: Network error occurred.</p>`;
+//   }
+// });
+
+// Send Message to Gemini API
+const sendMessageToGemini = async () => {
+  const userInput = chatInput.value.trim();
+  if (!userInput) return;
+
+  // Display user message
+  chatMessages.innerHTML += `<p class="text-sm text-blue-600">You: ${userInput}</p>`;
+  chatInput.value = "";
+
+  try {
+    const response = await fetch(
+      `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${GEMINI_API_KEY}`,
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          contents: [{ role: "user", parts: [{ text: userInput }] }],
+        }),
+      }
+    );
+
+    const data = await response.json();
+
+    // Check API Response
+    if (response.ok && data.candidates) {
+      const botResponse =
+        data.candidates[0]?.content?.parts?.[0]?.text ||
+        "I couldn't find an answer.";
+      chatMessages.innerHTML += `<p class="text-sm text-gray-800">Bot: ${botResponse}</p>`;
+    } else {
+      console.error("API Response Error:", data);
+      chatMessages.innerHTML += `<p class="text-sm text-red-600">Bot: Unable to get a response.</p>`;
+    }
+
+    // Auto-scroll to bottom
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+  } catch (error) {
+    console.error("Network Error:", error);
+    chatMessages.innerHTML += `<p class="text-sm text-red-600">Bot: Network error occurred.</p>`;
+  }
+};
+
+// Send message on button click
+sendMessage.addEventListener("click", sendMessageToGemini);
+
+// Send message on Enter key press
+chatInput.addEventListener("keydown", (event) => {
+  if (event.key === "Enter") {
+    sendMessageToGemini();
+  }
+});

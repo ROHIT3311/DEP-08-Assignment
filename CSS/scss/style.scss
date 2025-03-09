@@ -1,0 +1,15 @@
+@mixin theme($bgColor : grey, $textColor: white){
+    background-color: $bgColor;
+    // box-shadow: 5px 5px 51px 1px black;
+    color: $textColor;
+    height: 100px;
+    width: 100px;
+}
+
+.one{
+    @include theme;
+}
+
+.two{
+    @include theme(blue)
+}

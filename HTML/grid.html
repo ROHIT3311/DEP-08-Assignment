@@ -1,37 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Grid</title>
     <style>
-        .box{
-            height: 300px;
-            width: 500px;
-            background-color: aqua;
-            display: grid;
-            grid-template-columns: 100px 100px;
-            grid-template-rows:100px 100px 100px;
-        }
-        .f{
-            background-color: yellow;
-            height: 50px;
-            width: 50px;
-        }
-        .item-4{
-            grid-row: 1/2;
-            grid-column: 1/2;
-        }
-
+      .box {
+        height: 300px;
+        width: 500px;
+        background-color: aqua;
+        display: grid;
+        grid-template-columns: 100px 100px 100px 100px 100px;
+        grid-template-rows: 100px 100px 100px;
+        /* justify-items: center;
+        align-items: center; */
+      }
+      .f {
+        background-color: yellow;
+        height: 50px;
+        width: 50px;
+        z-index: 1;
+      }
+      .item-6 {
+        display: grid;
+        grid-template-columns: 50px 50px;
+        grid-template-rows: 50px 50px;
+      }
+      .g{
+        height: 10px;
+        width: 10px;
+        background-color: red;
+        z-index: 10;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div class="box">
-        <div class="f">1</div>
-        <div class="f">2</div>
-        <div class="f">3</div>
-        <div class="f item-4">4</div>
-        <div class="f">5</div>
+      <div class="f">1</div>
+      <div class="f">2</div>
+      <div class="f">3</div>
+      <div class="f">4</div>
+      <div class="f">5</div>
+      <div class="f item-6">
+        <div class="g"></div>
+        <div class="g"></div>
+        <div class="g"></div>
+        <div class="g"></div>
+        <div class="g"></div>
+      </div>
+      <div class="f">7</div>
+      <div class="f">8</div>
+      <div class="f">9</div>
+      <div class="f">10</div>
+      <div class="f">11</div>
+      <div class="f">12</div>
+      <div class="f">13</div>
+      <div class="f">14</div>
+      <div class="f">15</div>
     </div>
-</body>
+  </body>
 </html>

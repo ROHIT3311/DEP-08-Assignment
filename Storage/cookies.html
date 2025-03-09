@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cookies</title>
+  </head>
+  <body>
+    <script>
+      //   document.cookie =
+      //     "name=John; expires=" +
+      //     new Date(new Date().getTime() + 5 * 1000).toUTCString() +
+      //     "; path=/";
+
+      //   console.log(new Date().getTime());
+      //   console.log(new Date().getTime() + 5 * 1000);
+
+      // Function to set a cookie with 24-hour expiration
+      function setCookie(name, value) {
+        // Get the current time
+        let date = new Date();
+
+        // Add 24 hours to the current time
+        date.setTime(date.getTime() + 24 * 60 * 60 * 1000);
+
+        // Set the cookie with an expiration time of 24 hours
+        document.cookie =
+          name + "=" + value + "; expires=" + date.toUTCString() + "; path=/";
+
+        console.log("✅ Cookie Created Successfully!");
+      }
+
+      // Function to get a cookie by name
+      function getCookie(name) {
+        let cookies = document.cookie.split("; ");
+        for (let i = 0; i < cookies.length; i++) {
+          let cookie = cookies[i].split("=");
+          if (cookie[0] === name) {
+            return cookie[1];
+          }
+        }
+        return null;
+      }
+
+      // Function to delete the cookie manually
+      function deleteCookie(name) {
+        document.cookie =
+          name + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
+        console.log("❌ Cookie Deleted!");
+      }
+
+      // ✅ Create a cookie named "user" with a value "John"
+      setCookie("user", "John");
+
+      // ✅ Check if the cookie exists
+      console.log("User:", getCookie("user"));
+
+      // ✅ The cookie will automatically expire after 24 hours
+    </script>
+  </body>
+</html>

@@ -9,89 +9,16 @@
       src="https://kit.fontawesome.com/5d44603319.js"
       crossorigin="anonymous"
     ></script>
+    <link rel="manifest" href="manifest.json" />
+    <link rel="icon" href="./assets/logo512.png" type="image/png" />
+    <link rel="apple-touch-icon" href="./assets/logo512.png" />
   </head>
   <body>
-    <!-- <header class="relative">
-      <div class="relative">
-        <div class="relative overflow-hidden">
-          <div class="w-full h-[500px] relative">
-            <div
-              class="absolute inset-0 flex items-center justify-start p-6 md:p-12"
-            >
-              <div class="text-white">
-                <h3 class="text-2xl font-bold">$35,000</h3>
-                <h2 class="text-4xl font-extrabold">Mercedes-Benz, C Class</h2>
-                <div class="flex gap-4 mt-2">
-                  <div class="flex items-center gap-2">
-                    <img
-                      src="assets/petrol.png"
-                      alt="Fuel Type"
-                      class="w-5 h-5"
-                    />
-                    <p class="text-sm">Petrol</p>
-                  </div>
-                  <div class="flex items-center gap-2">
-                    <img
-                      src="assets/milage.png"
-                      alt="Mileage"
-                      class="w-5 h-5"
-                    />
-                    <p class="text-sm">100 Miles</p>
-                  </div>
-                  <div class="flex items-center gap-2">
-                    <img
-                      src="assets/geras.png"
-                      alt="Gear Type"
-                      class="w-5 h-5"
-                    />
-                    <p class="text-sm">Automatic</p>
-                  </div>
-                </div>
-                <button class="mt-3 px-4 py-2 bg-white text-black rounded-lg">
-                  Learn More
-                </button>
-              </div>
-            </div>
-            <img
-              src="assets/carousal.png"
-              class="w-full h-full object-cover"
-              alt="Car Image"
-            />
-          </div>
-        </div>
-      </div>
-
-      <nav class="absolute top-0 w-full bg-transparent z-50 p-4">
-        <div class="container mx-auto flex justify-between items-center">
-          <h2 class="text-white text-2xl font-bold">BOXCARS</h2>
-          <button class="md:hidden text-white" onclick="toggleMenu()">☰</button>
-          <ul
-            id="mobile-menu"
-            class="hidden md:flex md:space-x-6 absolute md:relative top-full left-0 w-full bg-gray-900 md:bg-transparent md:flex-row flex-col md:items-center md:justify-end p-4 md:p-0"
-          >
-            <li><a href="#" class="text-white block py-2">Home</a></li>
-            <li><a href="#" class="text-white block py-2">Listings</a></li>
-            <li><a href="#" class="text-white block py-2">Blog</a></li>
-            <li><a href="#" class="text-white block py-2">Pages</a></li>
-            <li><a href="#" class="text-white block py-2">About</a></li>
-            <li><a href="#" class="text-white block py-2">Contact</a></li>
-            <li><a href="#" class="text-white block py-2">Sign In</a></li>
-            <li>
-              <button
-                class="border border-white text-white px-4 py-2 rounded-lg w-full md:w-auto"
-              >
-                Submit Listing
-              </button>
-            </li>
-          </ul>
-        </div>
-      </nav>
-    </header> -->
-
+    <!-- Header -->
     <header class="relative">
       <div class="relative">
         <div class="relative overflow-hidden">
-          <div class="w-full h-[500px] relative">
+          <div class="w-full h-screen relative">
             <div
               class="absolute inset-0 flex items-center justify-start p-6 md:p-12"
             >
@@ -173,8 +100,10 @@
         id="hamburger-menu"
         class="fixed top-0 left-0 w-full h-full bg-black z-40 hidden flex-col"
       >
-        <div class="flex justify-end p-4">
-          <button class="text-white" onclick="toggleMenu()">✖</button>
+        <div class="flex justify-end p-5">
+          <button class="text-white h-[15px] w-[15px]" onclick="toggleMenu()">
+            ✖
+          </button>
         </div>
         <ul class="flex flex-col items-center space-y-4 mt-16">
           <li><a href="#" class="text-white block py-2">Home</a></li>
@@ -194,6 +123,7 @@
         </ul>
       </div>
     </header>
+
     <!-- Car Types Section -->
     <div class="p-10">
       <div class="flex justify-between items-center my-3">
@@ -489,7 +419,7 @@
     </div>
 
     <!-- About Application -->
-    <div class="application relative mt-5">
+    <!-- <div class="application relative mt-5">
       <div class="application-img">
         <img src="assets/image.png" alt="" class="img-fluid w-full" />
         <div
@@ -505,7 +435,7 @@
               by holding it for up to 7 days.
             </p>
             <div class="download-btn flex items-center gap-3 mt-4">
-              <!-- Apple Store Button -->
+             
               <div
                 class="apple bg-black py-3 px-4 rounded-lg flex items-center gap-3"
               >
@@ -516,7 +446,7 @@
                   <strong class="text-white text-lg">Apple Store</strong>
                 </div>
               </div>
-              <!-- Google Play Button -->
+          
               <div
                 class="google bg-black py-3 px-4 rounded-lg flex items-center gap-3"
               >
@@ -531,7 +461,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
 
     <!-- Premium brands -->
     <div class="car-log-container p-10">
@@ -855,6 +785,52 @@
       </div>
     </footer>
 
-    <script src="script2.js"></script>
+    <!-- Chatbot Toggle Button -->
+    <div
+      id="chatbotToggle"
+      class="fixed bottom-5 right-5 bg-black h-[60px] w-[60px] rounded-full flex items-center justify-center shadow-lg cursor-pointer transition-transform duration-200 hover:scale-110"
+    >
+      <i class="fa-solid fa-robot fa-2xl text-white"></i>
+    </div>
+
+    <!-- Chatbot Container -->
+    <div
+      id="chatbotContainer"
+      class="fixed bottom-20 right-5 bg-white w-[350px] h-[450px] rounded-lg shadow-xl p-4 transition-all duration-300 transform scale-95 opacity-0 invisible flex flex-col"
+    >
+      <!-- Close Button -->
+      <button
+        id="closeChatbot"
+        class="absolute top-3 right-3 text-gray-500 hover:text-gray-800"
+      >
+        ✖
+      </button>
+
+      <!-- Chat Header -->
+      <h3 class="text-lg font-semibold text-gray-700 mb-2">Car Chatbot</h3>
+
+      <!-- Chat Messages (Scrollable) -->
+      <div
+        id="chatMessages"
+        class="flex-1 overflow-y-auto border p-3 text-gray-700 space-y-2"
+      >
+        <p class="text-sm">Ask me about cars!</p>
+      </div>
+
+      <!-- Input Field & Send Button -->
+      <div class="flex mt-3 border-t pt-3">
+        <input
+          id="chatInput"
+          type="text"
+          class="flex-grow p-2 border rounded-l focus:outline-none"
+          placeholder="Type a message..."
+        />
+        <button id="sendMessage" class="bg-black text-white px-4 rounded-r">
+          Send
+        </button>
+      </div>
+    </div>
+
+    <script src="script/script.js"></script>
   </body>
 </html>
