@@ -95,3 +95,26 @@
     </script>
   </body>
 </html>
+
+<script>
+  class YouTube {
+    constructor() {
+      this.subscriber = [];
+    }
+
+    plzSubscribe(fun) {
+      this.subscriber.push(fun);
+    }
+
+    releaseVdo() {
+      console.log(this.subscriber);
+    }
+  }
+
+  let yt = new YouTube();
+  yt.plzSubscribe(() => {
+    console.log("Subsribed");
+  });
+
+  yt.releaseVdo();
+</script>
