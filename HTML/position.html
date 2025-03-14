@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Position</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      .box {
+        height: 130px;
+        width: 80vw;
+        border: 2px solid black;
+        margin: 3px;
+        padding: 3px;
+      }
+
+      .box1 {
+        background-color: aqua;
+      }
+      .box2 {
+        background-color: beige;
+      }
+      .box3 {
+        background-color: bisque;
+      }
+      .box4 {
+        background-color: burlywood;
+      }
+      .parent {
+        margin: 30px;
+        padding: 30px;
+        border: 2px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="parent">
+      <div class="box1 box"></div>
+      <div class="box2 box"></div>
+      <div class="box3 box"></div>
+      <div class="box4 box"></div>
+    </div>
+    <p>
+      Whenever you apply top, left, right and bottom css to an element then it
+      will set according to its parent element. If we have div in that we have 4
+      boxes and box 2 will give position absolute and top and bottom. And we
+      have not applied any position property to that div that is parent then
+      that box will search above to grand parent and alas if not found, it will
+      take html tag as parent and then apply the top and left So, if we want to
+      apply such css according to parent then parent should have any position
+      except static which is default
+    </p>
+    <p>
+      If that parent can have css like transform, filer and perspective
+      properties can also make its child element appear as position by left and
+      botton or any Means it will take position as parent not to its grand
+      parent or html
+    </p>
+  </body>
+</html>

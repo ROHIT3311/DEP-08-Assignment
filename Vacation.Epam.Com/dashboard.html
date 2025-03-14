@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <script>
+      window.onload = function () {
+        fetch("header.html")
+          .then((response) => response.text())
+          .then((data) => {
+            document.getElementById("navbar").innerHTML = data;
+          })
+          .catch((error) => console.error("Error loading navbar:", error));
+      };
+    </script>
+    <script
+      src="https://kit.fontawesome.com/5d44603319.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+  </head>
+  <body>
+    <main>
+      <div id="navbar"></div>
+      <div class="main-content h-[700px] w-full mt-5">
+        <div class="overview p-3 text-[#474a59]">
+          <div class="overview-head flex justify-between">
+            <p class="text-[25px] m-2 font-semibold">Overview</p>
+            <p class="text-[15px] m-2 text-blue-400 font-semibold">
+              Go to Balance
+            </p>
+          </div>
+          <div class="card-main flex font-semibold">
+            <div
+              class="m-2 card-1 h-[250px] w-[500px] shadow-xl flex items-center justify-center relative"
+            >
+              <p class="absolute top-0 left-0 pt-2 pl-2">Regular Vacations</p>
+              <div
+                class="circle rounded-full border-[#30B6DD] border-10 h-[180px] w-[180px] flex flex-col items-center justify-center text-3xl"
+              >
+                <p>15d</p>
+
+                <p class="font-normal text-[15px]">of 15d</p>
+              </div>
+            </div>
+
+            <div
+              class="m-2 card-1 h-[250px] w-[500px] shadow-xl flex items-center justify-center relative"
+            >
+              <p class="absolute top-0 left-0 pt-2 pl-2">Overtime Vacations</p>
+              <div
+                class="circle rounded-full border-blue-100 border-10 h-[180px] w-[180px] flex flex-col items-center justify-center text-3xl"
+              >
+                <p>0h</p>
+              </div>
+            </div>
+            <div
+              class="m-2 card-1 h-[250px] w-[500px] shadow-xl flex items-center justify-center relative"
+            >
+              <p class="absolute top-0 left-0 pt-2 pl-2">Sick leave</p>
+              <div
+                class="circle rounded-full border-[#30B6DD] border-10 h-[180px] w-[180px] flex flex-col items-center justify-center text-3xl"
+              >
+                <p>6d</p>
+
+                <p class="font-normal text-[15px]">of 6d</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="my-requests p-3 text-[#474a59]">
+          <div class="overview-head flex justify-between">
+            <p class="text-[25px] m-2 font-semibold">My Requests</p>
+            <p class="text-[15px] m-2 text-blue-400 font-semibold">
+              Go to all Requests
+            </p>
+          </div>
+
+          <div
+            class="my-requests p-3 h-[calc(100%-300px)] flex flex-col items-center justify-center"
+          >
+            <img
+              src="book.svg"
+              alt="Book"
+              class="h-full max-h-[300px] w-auto"
+            />
+            <p class="mt-4 font-semibold">There are no registered requests.</p>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

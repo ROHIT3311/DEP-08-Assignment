@@ -1,0 +1,53 @@
+[
+    {
+      "id": 1,
+      "name": "SUV",
+      "image": "assets/suv.png"
+    },
+    {
+      "id": 2,
+      "name": "Sedan",
+      "image": "assets/sedan.png"
+    },
+    {
+      "id": 3,
+      "name": "Hatchback",
+      "image": "assets/hatchback.png"
+    },
+    {
+      "id": 4,
+      "name": "Coupe",
+      "image": "assets/coupe.png"
+    },
+    {
+      "id": 5,
+      "name": "Hybrid",
+      "image": "assets/hybrid.png"
+    },
+    {
+      "id": 6,
+      "name": "Convertible",
+      "image": "assets/suv.png" 
+    },
+    {
+      "id": 7,
+      "name": "Sports Car",
+      "image": "assets/sedan.png" 
+    },
+    {
+      "id": 8,
+      "name": "Electric",
+      "image": "assets/hatchback.png" 
+    },
+    {
+      "id": 9,
+      "name": "Luxury",
+      "image": "assets/coupe.png" 
+    },
+    {
+      "id": 10,
+      "name": "Minivan",
+      "image": "assets/hybrid.png"
+    }
+  ]
+  

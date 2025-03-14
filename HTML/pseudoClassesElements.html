@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Pseudo-Classes and Pseudo-Elements Demo</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        margin: 20px;
+      }
+      h1,
+      h2 {
+        margin-top: 30px;
+      }
+      .demo {
+        margin-bottom: 20px;
+        padding: 10px;
+        border: 1px solid #ccc;
+      }
+      .highlight {
+        color: red;
+      }
+      .description {
+        font-style: italic;
+        color: gray;
+      }
+      a:hover {
+        color: green;
+      }
+      p:first-child {
+        font-weight: bold;
+        color: blue;
+      }
+      p:nth-child(2) {
+        color: orange;
+      }
+      p:nth-of-type(3) {
+        color: purple;
+      }
+      p:nth-last-child(1) {
+        color: yellow;
+      }
+      p:not(.exclude) {
+        color: pink;
+      }
+      p::before {
+        content: "Note: ";
+        font-weight: bold;
+      }
+      p::after {
+        content: " [End of Paragraph]";
+      }
+      p::first-letter {
+        font-size: 2em;
+        color: red;
+      }
+      p::first-line {
+        font-style: italic;
+      }
+      input:focus {
+        background-color: yellow;
+      }
+      input:checked {
+        background-color: lightgreen;
+      }
+      input:required {
+        border: 2px solid blue;
+      }
+      input:enabled {
+        background-color: lightblue;
+      }
+      input:disabled {
+        background-color: lightgray;
+      }
+      li::marker {
+        color: blue;
+      }
+      div:empty {
+        display: none;
+      }
+      p:target {
+        color: green;
+      }
+      p:first-of-type {
+        font-weight: bold;
+        font-size: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>CSS Pseudo-Classes and Pseudo-Elements Demo</h1>
+
+    <div class="demo">
+      <h2>:hover</h2>
+      <p>Hover over the link to change its color:</p>
+      <a href="#" class="highlight">Hover me!</a>
+      <p class="description">
+        The <code>:hover</code> pseudo-class is used to apply styles when an
+        element is hovered over.
+      </p>
+    </div>
+
+    <div class="demo">
+      <h2>:focus</h2>
+      <p>Click into the input field to change its background:</p>
+      <input type="text" placeholder="Click here to focus" />
+      <p class="description">
+        The <code>:focus</code> pseudo-class applies styles when an element
+        (such as a text field) gains focus.
+      </p>
+    </div>
+
+    <div class="demo">
+      <h2>:active</h2>
+      <p>Click on the link to apply an active style:</p>
+      <a href="#">Click me!</a>
+      <p class="description">
+        The <code>:active</code> pseudo-class applies styles when an element is
+        activated, like when clicked.
+      </p>
+    </div>
+
+    <div class="demo">
+      <h2>:first-child</h2>
+      <p>
+        The first child element inside this container will be bold and blue:
+      </p>
+      <div>
+        <p>This is the first paragraph.</p>
+        <p>This is the second paragraph.</p>
+      </div>
+      <p class="description">
+        The <code>:first-child</code> pseudo-class targets the first child
+        element of its parent.
+      </p>
+    </div>
+
+    <div class="demo">
+      <h2>:last-child</h2>
+      <p>
+        The last child element inside this container will be bold and yellow:
+      </p>
+      <div>
+        <p>This is the first paragraph.</p>
+        <p>This is the second paragraph.</p>
+      </div>
+      <p class="description">
+        The <code>:last-child</code> pseudo-class targets the last child element
+        of its parent.
+      </p>
+    </div>
+
+    <div class="demo">
+      <h2>:nth-child(n)</h2>
+      <p>The second child will be orange:</p>
+      <div>
+        <p>This is the first paragraph.</p>
+        <p>This is the second paragraph.</p>
+      </div>
+      <p class="description">
+        The <code>:nth-child(n)</code> pseudo-class targets the child element at
+        the specified position (2nd in this case).
+      </p>
+    </div>
+
+    <div class="demo">
+      <h2>:nth-last-child(n)</h2>
+      <p>The last paragraph will be yellow:</p>
+      <div>
+        <p>This is the first paragraph.</p>
+        <p>This is the second paragraph.</p>
+      </div>
+      <p class="description">
+        The <code>:nth-last-child(n)</code> pseudo-class targets the element
+        from the end, at the specified position.
+      </p>
+    </div>
+
+    <div class="demo">
+      <h2>:nth-of-type(n)</h2>
+      <p>The third paragraph will be purple:</p>
+      <div>
+        <p>This is the first paragraph.</p>
+        <p>This is the second paragraph.</p>
+        <p>This is the third paragraph.</p>
+      </div>
+      <p class="description">
+        The <code>:nth-of-type(n)</code> pseudo-class targets the element of the
+        specified type at the given position.
+      </p>
+    </div>
+
+    <div class="demo">
+      <h2>:not(selector)</h2>
+      <p>
+        This will target all paragraphs except those with the class
+        <code>.exclude</code>:
+      </p>
+      <p class="exclude">This is a special paragraph.</p>
+      <p>This is a regular paragraph.</p>
+      <p class="description">
+        The <code>:not(selector)</code> pseudo-class excludes elements that
+        match the selector inside the parentheses.
+      </p>
+    </div>
+
+    <div class="demo">
+      <h2>:checked</h2>
+      <p>Check the checkbox to change its background color:</p>
+      <input type="checkbox" checked />
+      <p class="description">
+        The <code>:checked</code> pseudo-class targets input elements that are
+        checked (like checkboxes or radio buttons).
+      </p>
+    </div>
+
+    <div class="demo">
+      <h2>:disabled</h2>
+      <p>The disabled input will have a different background:</p>
+      <input type="text" disabled placeholder="I am disabled" />
+      <p class="description">
+        The <code>:disabled</code> pseudo-class targets input elements that are
+        disabled.
+      </p>
+    </div>
+
+    <div class="demo">
+      <h2>:enabled</h2>
+      <p>The enabled input will have a different background:</p>
+      <input type="text" enabled placeholder="I am enabled" />
+      <p class="description">
+        The <code>:enabled</code> pseudo-class targets input elements that are
+        enabled.
+      </p>
+    </div>
+
+    <div class="demo">
+      <h2>:required</h2>
+      <p>This input is required:</p>
+      <input type="text" required placeholder="I am required" />
+      <p class="description">
+        The <code>:required</code> pseudo-class targets input elements that are
+        required.
+      </p>
+    </div>
+
+    <div class="demo">
+      <h2>:optional</h2>
+      <p>This input is optional:</p>
+      <input type="text" optional placeholder="I am optional" />
+      <p class="description">
+        The <code>:optional</code> pseudo-class targets input elements that are
+        optional.
+      </p>
+    </div>
+
+    <div class="demo">
+      <h2>:empty</h2>
+      <p>This div has no content and will be hidden:</p>
+      <div class="empty-div"></div>
+      <p class="description">
+        The <code>:empty</code> pseudo-class targets elements that have no
+        children, including text nodes.
+      </p>
+    </div>
+
+    <div class="demo">
+      <h2>:root</h2>
+      <p>The root element is targeted:</p>
+      <div class="root-div">Root div</div>
+      <p class="description">
+        The <code>:root</code> pseudo-class targets the highest level parent
+        element (usually <code>html</code> in HTML).
+      </p>
+    </div>
+
+    <div class="demo">
+      <h2>:target</h2>
+      <p>
+        This paragraph will change color when the page is targeted by a URL
+        fragment:
+      </p>
+      <a href="#demo-target">Go to Target</a>
+      <p id="demo-target">This is the target paragraph.</p>
+      <p class="description">
+        The <code>:target</code> pseudo-class applies when an element is
+        targeted by a URL fragment identifier.
+      </p>
+    </div>
+
+    <div class="demo">
+      <h2>::before</h2>
+      <p>This paragraph will have content before it:</p>
+      <p>This is a paragraph.</p>
+      <p class="description">
+        The <code>::before</code> pseudo-element inserts content before the
+        content of the element.
+      </p>
+    </div>
+
+    <div class="demo">
+      <h2>::after</h2>
+      <p>This paragraph will have content after it:</p>
+      <p>This is another paragraph.</p>
+      <p class="description">
+        The <code>::after</code> pseudo-element inserts content after the
+        content of the element.
+      </p>
+    </div>
+
+    <div class="demo">
+      <h2>::first-letter</h2>
+      <p>This is the first letter of the paragraph:</p>
+      <p>This is a paragraph with a styled first letter.</p>
+      <p class="description">
+        The <code>::first-letter</code> pseudo-element targets the first letter
+        of the text in an element.
+      </p>
+    </div>
+
+    <div class="demo">
+      <h2>::first-line</h2>
+      <p>This is the first line of the paragraph:</p>
+      <p>This is a paragraph with a styled first line.</p>
+      <p class="description">
+        The <code>::first-line</code> pseudo-element targets the first line of
+        the text in an element.
+      </p>
+    </div>
+
+    <div class="demo">
+      <h2>::selection</h2>
+      <p>Select some text to see the effect:</p>
+      <p>This text will change color when selected.</p>
+      <p class="description">
+        The <code>::selection</code> pseudo-element applies styles to the
+        selected text within an element.
+      </p>
+    </div>
+
+    <div class="demo">
+      <h2>::marker</h2>
+      <p>List items will have a blue bullet:</p>
+      <ul>
+        <li>This is a list item</li>
+        <li>This is another list item</li>
+      </ul>
+      <p class="description">
+        The <code>::marker</code> pseudo-element is used to style the marker
+        (bullet) of a list item.
+      </p>
+    </div>
+  </body>
+</html>
