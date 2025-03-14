@@ -98,10 +98,9 @@
 
 // getVal();
 
-{
-  var a = 10;
-  let b = 20;
-  const c = 30;
-}
+var a = 10;
+let b = 20;
+const c = 30;
+let str = "Hello";
 
 console.log(a);

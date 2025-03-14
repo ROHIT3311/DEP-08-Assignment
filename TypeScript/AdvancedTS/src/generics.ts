@@ -1,4 +1,5 @@
-// Generics in TypeScript allow you to create reusable and flexible components that can work with multiple data types while maintaining type safety.
+// Generics in TypeScript allow you to create reusable and flexible components that can work 
+// with multiple data types while maintaining type safety.
 // A generic type is defined using angle brackets <T>, where T is a placeholder for the actual type.
 // Generics make your functions, classes, and interfaces more reusable and type-safe.
 // Type inference helps avoid manually specifying types.
