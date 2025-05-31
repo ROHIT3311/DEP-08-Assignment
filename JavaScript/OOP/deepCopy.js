@@ -10,6 +10,16 @@ let obj = {
   },
 };
 
+let shallowcpy = Object.assign({}, obj);
+console.log(shallowcpy);
+shallowcpy.addrees.city = "Nashik";
+shallowcpy.name = "Rohit";
+console.log(obj.addrees.city);
+console.log(shallowcpy.addrees.city);
+console.log(shallowcpy.name);
+console.log(obj.name);
+shallowcpy.greet();
+
 // let deepObj = JSON.parse(JSON.stringify(obj));
 // // deepObj.greet();
 // // deepObj.age = 30;
@@ -18,5 +28,5 @@ let obj = {
 // deepObj.addrees.city = "Nashik";
 // console.log(`Obj : ${obj.addrees.city} and DeepObj : ${deepObj.addrees.city}`);
 
-let deepObj = structuredClone(obj);
-deepObj.greet();
+// let deepObj = structuredClone(obj);
+// deepObj.greet();

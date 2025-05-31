@@ -51,7 +51,6 @@ let car1 = Car("Toyota", "Supra");
 console.log(car1);
 car1.getCar();
 
-
 // This introduced in ES6. This share among all the instances, so it takes less memeory rather
 // than function factory
 class Bike {
@@ -94,4 +93,6 @@ class VehicleFactory {
 
 let v1 = new VehicleFactory();
 let car = v1.createVehicle("Suzuki", "Fronx", 2);
+let bik1 = v1.createVehicle("BMW", "S100RR", 1);
+bik1.getBike();
 car.getCar();

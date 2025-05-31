@@ -5,8 +5,7 @@ function throttle(func, delay) {
   let lastTime = 0;
   return function () {
     const now = new Date().getTime();
-    console.log(lastTime);
-    console.log(delay);
+
     if (now - lastTime >= delay) {
       func();
       lastTime = now;

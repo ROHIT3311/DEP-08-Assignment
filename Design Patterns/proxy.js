@@ -12,4 +12,4 @@ let p1 = new Proxy(o1, {
   },
 });
 
-p1.c;
+p1.get();

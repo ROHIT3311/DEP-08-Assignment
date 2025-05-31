@@ -72,8 +72,10 @@ function Employee(dept) {
 }
 
 Employee.prototype = Object.create(User.prototype);
-Employee.prototype.constructor = User;
+// Employee.prototype.constructor = User;
 let e1 = new Employee("CS");
+e1.show();
+e1.showUser();
 let u1 = new User("Alex", 23);
 console.log(e1 instanceof User);
 console.log(u1 instanceof User);
