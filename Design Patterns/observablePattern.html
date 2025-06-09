@@ -36,7 +36,7 @@
     <p id="observer2">Observer 2:</p>
     <button id="unsubscribe2">Unsubscribe Observer 2</button>
 
-    <script>
+    <!-- <script>
       // Observable class
       class Observable {
         constructor() {
@@ -92,29 +92,46 @@
         textObservable.unsubscribe(updateObserver2);
         observer2.textContent = "Observer 2: Unsubscribed";
       });
+    </script> -->
+    <script>
+      class YouTube {
+        constructor() {
+          this.subscriber = [];
+        }
+
+        // Register a subscriber
+        plzSubscribe(fun) {
+          this.subscriber.push(fun);
+        }
+
+        // Notify all subscribers
+        releaseVdo() {
+          console.log("Releasing new video...");
+          this.subscriber.forEach((fun, index) => {
+            console.log(`Notifying subscriber #${index + 1}`);
+            fun();
+          });
+        }
+      }
+
+      // Create YouTube channel (Publisher)
+      let yt = new YouTube();
+
+      // Add multiple subscribers
+      yt.plzSubscribe(() => {
+        console.log("Subscriber 1: Thanks for the video!");
+      });
+
+      yt.plzSubscribe(() => {
+        console.log("Subscriber 2: Awesome, new content!");
+      });
+
+      yt.plzSubscribe(() => {
+        console.log("Subscriber 3: Can't wait to watch!");
+      });
+
+      // Trigger the video release
+      yt.releaseVdo();
     </script>
   </body>
 </html>
-
-<script>
-  class YouTube {
-    constructor() {
-      this.subscriber = [];
-    }
-
-    plzSubscribe(fun) {
-      this.subscriber.push(fun);
-    }
-
-    releaseVdo() {
-      console.log(this.subscriber);
-    }
-  }
-
-  let yt = new YouTube();
-  yt.plzSubscribe(() => {
-    console.log("Subsribed");
-  });
-
-  yt.releaseVdo();
-</script>

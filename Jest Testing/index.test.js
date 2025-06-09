@@ -1,17 +1,27 @@
-const { add, getUser } = require("./index.js");
+const { add } = require("./index");
 
-test("adds 2 + 3 to equal 5", () => {
+test("Add ", () => {
   expect(add(2, 3)).toBe(5);
 });
 
-test("add 2+5 to equal 7", () => {
-  expect(add(2, 5)).toBe(7);
+test("Multiply 2 numbers : ", () => {
+  // Arrange
+  const multiply = (a, b) => a * b;
+
+  //   Act
+  const result = multiply(2, 3);
+
+  //   Assert
+  expect(result).toBe(6);
 });
 
-// Mocking the getUser function
-const mockGetUser = jest.fn(() => ({ name: "Bob", age: 30 }));
+test("True or false", () => {
+  // Arrange
+  const bool = (a) => a % 2 == 0;
 
-test("mocked getUser function", () => {
-  expect(mockGetUser()).toEqual({ name: "Bob", age: 30 });
-  expect(mockGetUser).toHaveBeenCalledTimes(1);
+  //   Act
+  const result = bool(5);
+
+  //   Assert
+  expect(result).toBeFalsy();
 });

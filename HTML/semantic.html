@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .cont {
+        display: flex;
+        gap: 10px;
+        border: 2px solid black;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .cont-grid {
+        margin-top: 10px;
+        display: grid;
+        grid-template-rows: auto auto auto;
+        grid-template-columns: auto auto;
+        border: 2px solid black;
+        justify-items: end;
+      }
+      .one {
+        /* display: grid; */
+        grid-column: 1/3;
+        grid-row: 1/2
+      }
+    </style>
+  </head>
+  <body>
+    <div class="cont">
+      <h1>hello</h1>
+      <h1>hello</h1>
+      <h1>hello</h1>
+      <h1>hello</h1>
+    </div>
+
+    <div class="cont-grid">
+      <h1 class="one">hello</h1>
+      <h1>hello</h1>
+      <h1>hello</h1>
+      <h1>hello</h1>
+      <h1>hello</h1>
+    </div>
+  </body>
+</html>
